@@ -1,0 +1,2720 @@
+@charset "Shift_JIS";
+/* ―――――――――――――――――――――――――　共通レイアウト（PCファーストベース・リキッドレイアウトMAX：1920px）　――――――――――――――――――――――――― */
+/* Nowloading画面 */
+#loader-bg {
+  display: none;
+  cursor: wait;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+#loader {
+  display: none;
+  cursor: wait;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #000;
+  font-size: 12px;
+  text-align: center;
+}
+#loader .load-logo{
+  display: block;
+  width: 10%;
+  height: auto; 
+  margin: 20% 45% 2% 45%;
+}
+#loader .load-circle{
+  max-width: 80px;
+  width: 5%;
+  height: auto;
+}
+/* Nowloading画面 */
+
+/* 各ページ全体幅（左右余白あり） */
+.content{
+  overflow: hidden;
+  position: relative;
+  max-width: 1280px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  padding: 30px 0px;
+}
+/* 各ページ全体幅（左右余白あり） */
+
+/* ヘッダー会社ロゴ */
+#menu-logo{
+  position: absolute;
+  top: 4px;
+  left: 3%;
+  z-index: 2; /* header z-index 99-2 */
+  width: 70px;
+  height: auto;
+}
+/* ヘッダー会社ロゴ */
+
+/* メインナビメニュー */
+.dropmenu{
+  box-sizing: border-box;
+  list-style-type: none;
+  width: 1440px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+}
+.dropmenu li{
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+  width: 20%;
+  margin: 0;
+  padding: 0;
+}
+.dropmenu li a{
+  display: block;
+  margin: 0;
+  padding: 15px 0px 13px 0px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.dropmenu li:hover > a{
+  color: #2ad;
+  transition: 0.3s;
+}
+.dropmenu li:hover > a:active{
+  color: #269;
+  transition: 0.3s;
+}
+/* ホバー時の流れるライン */
+.dropmenu li a:before,
+.dropmenu li a:after{
+  display: inline-block;
+  position: absolute;
+  top: 32px;
+  content: "";
+  width: 0;
+  height: 2px; 
+  background: linear-gradient(to left, rgba(30, 30, 30, 0), rgba(0, 120, 200, 0.9));
+  transition: 0.3s;
+}
+.dropmenu li a:before{
+  left: 50%;
+}
+.dropmenu li a:after{
+  right: 50%;
+  transform: rotate(180deg);
+}
+.dropmenu li a:hover:before,
+.dropmenu li a:hover:after{
+  width: 50%;
+}
+/* ホバー時の流れるライン */
+/* 現在開いているページ */
+.dropmenu .active{
+  cursor: default;
+  color: #2ad;
+}
+/* 現在開いているページ */
+/* メインナビメニュー */
+
+/* サブナビメニュー */
+.sub-dropmenu{
+  overflow: visible;
+  box-sizing: border-box;
+  list-style-type: none;
+  max-width: 750px;
+  width: 92%;
+  height: 105px;
+  margin: 0 auto;
+  padding: 0;
+  border-left: 2px solid #666;
+  border-right: 2px solid #666;
+}
+.sub-dropmenu li{
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-left: 1px solid #666;
+}
+.sub-dropmenu li:first-child{
+  border-left: 0;
+}
+.sub-dropmenu li:last-child{
+  border-right: 1px solid #666;
+}
+.sub-dropmenu li img{
+  display: block;
+  width: 80px;
+  margin: 0 auto;
+}
+.sub-dropmenu li a{
+  display: block;
+  margin: 0;
+  padding: 3px 0px 10px 0px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.0;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.sub-dropmenu li:hover > a{
+  color: #6cf;
+  transition: 0.3s;
+}
+.sub-dropmenu li:hover > a:active{
+  color: #269;
+  transition: 0.3s;
+}
+/* サブナビメニューカレントページ */
+.sub-dropmenu .active{
+  cursor: default;
+  color: #6cf;
+}
+/* サブナビメニューカレントページ */
+/* ラインアップリスト４項目 */
+.item-line{
+  max-width: 750px;
+  border: 0;
+}
+.item-line li{
+  width: 25%;
+}
+.item-line li:first-child{
+  border-left: 1px solid #666;
+}
+/* ラインアップリスト４項目 */
+/* サブナビメニュー */
+
+/* スマホ向け折りたたみメニューボタン */
+.spmenu-btn { 
+  display: none;
+}
+/* スマホ向け折りたたみメニューボタン */
+
+/* 各ページのタイトル部分 */
+.main-banner{
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-height: 1080px;
+  height: 56.25%;
+}
+/* ホーム、問合せ、活用事例、当サイトご利用ページに使用 */
+.top-banner{
+  position: absolute;
+  top: 24%;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.top-banner .sub-title{
+  font-size: 22px;
+  line-height: 1.5;
+  font-weight: normal;
+}
+/* ホーム、問合せ、活用事例、当サイトご利用ページに使用 */
+/* サービスページに使用 */
+.service-banner{
+  position: absolute;
+  top: 12%;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.service-banner .title{
+  color: #000;
+}
+.service-banner .sub-title{
+  color: #000;
+  font-size: 30px;
+  line-height: 1.5;
+}
+/* サービスページに使用 */
+/* エラーページに使用 */
+.error-banner{
+  position: absolute;
+  top: 24%;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.error-banner .details{
+  font-size: 22px;
+  line-height: 2.5;
+  font-weight: normal;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+/* エラーページに使用 */
+/* 各ページのタイトル部分 */
+
+/* ボタンデザイン */
+.btn {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+  width: auto;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background: #9ac;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+}
+.btn:hover {
+  color: #fff;
+  background: #17c;
+  transition: 0.3s;
+}
+.btn:active {
+  color: #000;
+  background: #6cf;
+  transition: 0.3s;
+}
+/* ボタンデザイン */
+
+/* トップページコンテンツ */
+.top-content{
+  max-width: 1680px;
+  width: auto;
+  height: auto;
+  margin: 0% auto;
+}
+/* トップページコンテンツ */
+
+/* トップページ各種ページリンク */
+.link-block{
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  white-space: nowrap; 
+}
+.link-service{
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+  width: 49%;
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+  font-weight: normal;
+  text-decoration: none;
+}
+.link-service .title{
+  position: absolute;
+  top: 14%;
+  left: 0%;
+  width: 100%;
+  color: #000;
+  font-size: 50px;
+}
+.link-service .sub-title{
+  position: absolute;
+  top: 25%;
+  left: 0%;
+  width: 100%;
+  color: #000;
+  font-size: 28px;
+}
+.link-service span{
+  position: absolute;
+  top: 33%;
+  left: 0%;
+  width: 100%;
+  color: #000;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.link-service span:hover{
+  color: #2ad;
+  transition: 0.3s;
+}
+.link-service span:active{
+  color: #269;
+  transition: 0.3s;
+}
+.link-lineup{
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+  width: 33%;
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+  font-weight: normal;
+  text-decoration: none;
+}
+.link-lineup .black-edition {
+  color: #fff;
+}
+.link-lineup .white-edition {
+  color: #000;
+}
+.link-lineup .title{
+  position: absolute;
+  top: 8%;
+  left: 0%;
+  width: 100%;
+  font-size: 50px;
+}
+.link-lineup .sub-title{
+  position: absolute;
+  top: 21%;
+  left: 0%;
+  width: 100%;
+  font-size: 22px;
+  line-height: 1.2;
+}
+.link-lineup span{
+  position: absolute;
+  top: 28%;
+  left: 0%;
+  width: 100%;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.link-lineup span:hover{
+  color: #2ad;
+  transition: 0.3s;
+}
+.link-lineup span:active{
+  color: #269;
+  transition: 0.3s;
+}
+/* トップページ各種ページリンク */
+
+/* トピックス */
+.topix-block{
+  overflow-Y: scroll;
+  width: auto;
+  height: 320px;
+  margin: 0;
+  padding: 10px 20px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  text-align: left;
+}
+.topix-content{
+  box-sizing: border-box;
+  margin: 0px 0px 20px 0px;
+  clear: both;
+}
+.topix-content h4{
+  box-sizing: border-box;
+  margin: 10px 0px;
+  border-bottom: 1px dashed #aaa;
+  color: #269;
+  font-size: 24px;
+  font-weight: normal;
+  text-align: left;
+}
+.topix-content h4 span{
+  margin: 0px 10px;
+  color: #aaa;
+  font-size: 12px;
+}
+.topix-content p{
+  margin: 5px 10px;
+  font-size: 14px;
+  line-height: 2.0;
+}
+.topix-content .separate-txt-block{
+  float: left;
+  width: 70%;
+}
+.topix-content .separate-img-block{
+  float: right;
+  width: 30%;
+}
+.topix-content img{
+  box-shadow: 3px 3px 10px #999;
+}
+/* トピックス */
+
+/* Youtube投稿動画 */
+.youtube-block{
+  margin: 0;
+  text-align: center;
+}
+.youtube {
+  display: inline-block;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  width: 240px;
+  height: 135px;
+  margin: 5px;
+}
+.youtube:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  content: "Click to Play";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 12px;
+  font-weight: normal;
+  text-align: center;
+  transition: all 0.3s;
+}
+.youtube:hover:before {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.6);
+  color: #2ad;
+  font-size: 18px;
+  transition: all 0.3s;
+}
+/* Youtube投稿動画 */
+
+/* 方式一覧 */
+.molding-block{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 820px;
+  margin: 0 auto;
+  padding: 0;
+}
+.molding-block img{
+  position: absolute;
+  left: 50%;
+  width: 1920px;
+  height: 820px;
+  margin-left: -960px;
+}
+.molding-details{
+  position: absolute;
+  top: 6%;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.molding-details h3{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #000;
+  font-size: 52px;
+  line-height: 1.6;
+}
+.molding-details h4{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #269;
+  font-size: 28px;
+  line-height: 1.2;
+  text-align: center;
+}
+.molding-details a{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #333;
+  font-size: 20px;
+  line-height: 2.5;
+  font-weight: normal;
+  text-decoration: none;
+  transition: 0.3s;
+}
+/* 方式一覧 */
+
+/* 各種製品ラインナップページ */
+/* 各社ロゴ */
+#lineup-logo{
+  display: block;
+  max-width: 300px;
+  min-width: 120px;
+  width: 15%;
+  margin: 0px 0px 10px 0px;
+}
+/* 各社ロゴ */
+/* 製品特長 */
+.lineup-block{
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+  background: #fff;
+}
+.lineup-block h4 span{
+  color: #f00;
+  font-size: 80%;
+}
+.lineup-block h5{
+  margin: 0px 0px 20px 0px;
+}
+.lineup-block p{
+  margin: 10px 20px 30px 20px;
+  color: #000;
+  font-size: 16px;
+}
+.lineup-block p span{
+  color: #000;
+  font-size: 12px;
+}
+.lineup-block small{
+  color: #000;
+  padding: 5px 0px;
+}
+/* 製品特長 */
+/* 製品仕様テーブル */
+.lineup-block table{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-collapse: separate;
+  border-spacing: 1px;
+  color: #000;
+  font-size: 14px;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+.lineup-block th{
+  padding: 8px 5px;
+  background: #5cd;
+  color: #245;
+  font-weight: normal;
+  text-align: center;
+}
+.lineup-block td{
+  padding: 8px 5px;
+  background: #ddd;
+  text-align: left;
+}
+.lineup-block th span, .lineup-block td span{
+  font-size: 11px;
+}
+/* 製品仕様テーブル */
+/* 参考文章 */
+/* テキスト＆画像（上下分割） */
+.v-split{
+  margin: 5px 0px 30px 0px;
+  padding: 0px 10px;
+}
+.v-split p{
+  margin: 0;
+  line-height: 2.2;
+}
+.v-split img{
+  display: inline-block;
+  width: 50%;
+}
+/* テキスト＆画像（上下分割） */
+/* リスト＆画像（上下分割） */
+.v-split ul{
+  list-style-type: square;
+  width: auto;
+  margin: 0;
+  padding: 0px 5px 0px 25px;
+  vertical-align: top;
+}
+.v-split ul li{
+  font-size: 16px;
+  line-height: 2.0;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+/* リスト＆画像（上下分割） */
+/* テキスト＆画像（左右分割） */
+.h-split{
+  margin: 5px 0px 30px 0px;
+  padding: 0px 10px;
+}
+.h-split p{
+  display: inline-block;
+  width: 59%;
+  margin: 0;
+  vertical-align: top;
+  line-height: 2.2;
+}
+.h-split img{
+  display: inline-block;
+  width: 40%;
+  margin: 0;
+  vertical-align: top;
+  border: 1px solid #ccc;
+  box-shadow: 5px 3px 10px rgba(102,102,102,0.5);
+}
+/* テキスト＆画像（左右分割） */
+/* リスト＆画像（左右分割） */
+.h-split ul{
+  display: inline-block;
+  list-style-type: square;
+  width: 56%;
+  margin: 0;
+  padding: 0px 5px 0px 25px;
+  vertical-align: top;
+}
+.h-split ul li{
+  font-size: 16px;
+  line-height: 2.0;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+/* リスト＆画像（左右分割） */
+/* 参考文章 */
+/* お見積りボタン */
+.estimate-block{
+  display: block;
+  box-sizing: border-box;
+  width: 30%;
+  margin: 50px 35% 30px 35%;
+  padding: 0;
+  background: #fff;
+}
+.estimate-block a{
+  text-decoration: none;
+}
+.estimate-block p{
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  padding: 10px 0px;
+  background: #5a7;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  transition: 0.3s;
+}
+.estimate-block p:hover{
+  background: #5c8;
+  color: #fff;
+  transition: 0.3s;
+}
+.estimate-block p:active{
+  background: #2f8;
+  color: #000;
+  transition: 0.3s;
+}
+/* お見積りボタン */
+/* 各種製品ラインナップページ */
+
+/* 造形・モデリングサービスについて */
+.service-about{
+  padding: 80px 0px;
+}
+.service-about h5{
+  width: 73%;
+  margin: 0 auto;
+  font-size: 18px;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+.printing-content{
+  display: table;
+  height: 580px;
+  padding: 0;
+}
+.text-block-right{
+  display: table-cell;
+  float: right;
+  width: 52%;
+  height: 280px;
+  margin: 150px 1%;
+  vertical-align: middle;
+}
+.text-block-left{
+  display: table-cell;
+  float: left;
+  width: 52%;
+  height: 280px;
+  margin: 150px 1%;
+  vertical-align: middle;
+}
+.image-block-right{
+  display: table-cell;
+  float: right;
+  width: 46%;
+  height: auto;
+  vertical-align: middle;
+}
+.image-block-left{
+  display: table-cell;
+  float: left;
+  width: 46%;
+  height: auto;
+  vertical-align: middle;
+}
+.service-block{
+  display: block;
+  position: relative;
+  width: 98%;
+  height: auto;
+  margin: 0% 1%;
+  padding: 5px 0px;
+}
+.service-block p{
+  width: auto;
+  margin: 10px 20px;
+  padding: 0;
+  color: #000;
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: left;
+}
+.service-block p span{
+  font-size: 12px;
+}
+.service-block ul li{
+  width: auto;
+  margin: 10px 20px 10px 10px;
+  padding: 0;
+  color: #000;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: left;
+}
+#modeling-image{
+  width: 80%;
+  margin: 10px 10%;
+  border: 1px solid #999;
+  box-shadow: 5px 5px 10px #ccc;
+}
+/* 造形・モデリングサービスについて */
+
+/* 弊社所有3Dプリンタ・使用機材 */
+.equipment-title{
+  position: relative;
+  width: 98%;
+  margin: 0% 0.5%;
+  padding: 10px 28px 0px 28px;
+  border: 0;
+  font-size: 20px;
+  white-space: nowrap;
+}
+.equipment-printer{
+  overflow: hidden;
+  position: relative;
+  width: 98%;
+  height: auto;
+  min-height: 420px;
+  margin: 0% 1%;
+  padding: 0;
+  background-size: 36%;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  border-top: 1px solid #ccc;
+}
+.equipment-printer p{
+  position: relative;
+  width: 62%;
+  margin: 10px 36% 10px 2%;
+  color: #000;
+  font-size: 20px;
+  font-weight: normal;
+  text-align: left;
+}
+.equipment-printer p span{
+  font-size: 16px;
+  font-weight: normal;
+}
+.equipment-printer img{
+  position: absolute;
+  bottom: 0;
+  right: 36%;
+  width: 320px;
+  height: auto;
+}
+.printer1{
+  background-image: url("../img/service/printing_c3.jpg");
+}
+.printer2{
+  background-image: url("../img/service/printing_f370.jpg");
+}
+.printer3{
+  background-image: url("../img/service/printing_projet660.jpg");
+}
+.equipment-table{
+  display: table;
+  width: auto;
+}
+.equipment-soft{
+  box-sizing: border-box;
+  display: table-cell;
+  position: relative;
+  width: 50%;
+  height: auto;
+  min-height: 500px;
+  margin: 0;
+  padding: 10px 20px;
+  border: 5px solid #fff;
+  background: rgba(0, 0, 30, 0.1);
+}
+.equipment-soft h4{
+  position: relative;
+  width: 100%;
+  margin: 10px 0px;
+  font-size: 32px;
+  line-height: 1.5;
+  font-weight: normal;
+  text-align: center;
+}
+.equipment-soft p{
+  position: relative;
+  width: 100%;
+  margin: 10px 0px;
+  color: #000;
+  font-size: 16px;
+  line-height: 2.0;
+  font-weight: normal;
+  text-align: center;
+}
+#soft-image{
+  width: 96%;
+  margin: 0% 2%;
+  border: 1px solid #999;
+  box-shadow: 5px 5px 10px #ccc;
+}
+/* 弊社所有3Dプリンタ・使用機材 */
+
+/* 必須項目文 */
+.notes{
+  margin: 40px 0px;
+  color: #c33;
+}
+/* 必須項目文 */
+
+/* お問い合わせフォームデザイン */
+.contact-form table{
+  width: 80%;
+  margin: 0% 10%;
+  border-collapse: collapse;
+  border-spacing: 0px 0px;
+  border-bottom : 1px solid #555;
+}
+.contact-form span{
+  color: #c33;
+  font-size: 12px;
+}
+.contact-form th{
+  width: 25%;
+  padding: 20px;
+  border-top: 1px solid #555;
+  color: #333;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: left;
+}
+.contact-form td{
+  width: 75%;
+  padding: 20px;
+  border-top : 1px solid #555;
+  color: #000;
+  font-size: 14px;
+  font-weight: normal;
+}
+.contact-form textarea{
+  width: 98%;
+  height: 250px;
+  padding: 8px;
+  border: 2px solid #999;
+  border-radius: 5px;
+  color: #000;
+  font-family: Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", Arial, sans-serif;
+  font-size: 14px;
+  resize: none;
+}
+.contact-form textarea:focus{
+  border: 2px solid #269;
+}
+.contact-form input{
+  color: #000;
+  font-family: Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "メイリオ", Meiryo, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "ＭＳ Ｐゴシック", Arial, sans-serif;
+  font-size: 14px;
+}
+.contact-form label{
+  display: inline-block;
+  width: auto;
+  padding: 0px 10px 0px 0px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+.contact-form input[type="radio"]{
+  vertical-align: middle;
+}
+.contact-form input[type="text"]{
+  width: 95%;
+  height: auto;
+  padding: 8px;
+  border: 2px solid #999;
+  border-radius: 5px;
+}
+.contact-form input[type="text"]:focus{
+  border: 2px solid #269;
+}
+.txt-large{
+  max-width: 200px;
+}
+.txt-middle{
+  max-width: 150px;
+}
+.txt-small{
+  max-width: 100px;
+}
+.contact-form input[type="file"]{
+  width: 95%;
+  height: auto;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+}
+
+.contact-form input.submit-btn { 
+  display: block;
+  box-shadow: 0 6px 0 #163a69, 0 12px 0 rgba(0,0,0,0.2);
+  -webkit-transition: color 0.3s, background-color 0.3s, box-shadow 0.3s, -webkit-transform 0.3s;
+  transition: color 0.3s, background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  cursor: pointer;
+  position: relative;
+  width: 20%;
+  margin: 20px 40% 50px 40%;
+  padding: 10px;
+  background: #27589a;
+  border-radius: 5px;
+  border: 0px;
+  color: #fff;
+  font-size: 16px;
+} 
+.contact-form input.submit-btn:hover {
+  box-shadow: 0 3px 0 #395883, 0 6px 0px rgba(0,0,0,0.2);
+  color: #fff;
+  background: #5c8dd1;
+  -webkit-transform: translateY(3px);
+  transform: translateY(3px);
+}
+.contact-form input.submit-btn:active {
+  box-shadow: 0 0 0 #163a69, 0 0 0px rgba(0,0,0,0.2);
+  color: #ddd;
+  background: #27589a;
+  transition-duration: 0.1s;
+  -webkit-transform: translateY(6px);
+  transform: translateY(6px);
+}
+/* お問い合わせフォームデザイン */
+
+/* 利用規約 */
+.agreement{
+  display: block;
+  box-sizing: border-box;
+  width: 82%;
+  margin: 50px 9%;
+  padding: 20px 5%;
+  font-size: 12px;
+  background: #ccc;
+}
+.agreement h4{
+  border: 0;
+  font-size: 20px;
+  text-align: center;
+}
+.agreement div{
+  box-sizing: border-box;
+  overflow-Y: scroll;
+  width: 100%;
+  height: 250px;
+  margin: 0;
+  padding: 20px 0px;
+  background: #fff;
+  color: #000;
+}
+.agreement .title{
+  padding: 20px 0px;
+  color: #000;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+}
+.agreement .chapter{
+  margin: 0;
+  padding: 10px 12px;
+  border: 0;
+  color: #000;
+  font-size: 12px;
+  font-weight: normal;
+}
+.agreement p{
+  margin: 0;
+  padding: 0px 24px;
+  font-size: 12px;
+}
+.agreement ul{
+  list-style-type: decimal;
+  margin: 0px 24px 0px auto;
+  font-size: 12px;
+}
+.agreement .red{
+  margin: 0;
+  padding: 10px 0px; 
+  color: #c33;
+  font-size: 12px;
+  font-weight: normal;
+}
+/* 利用規約 */
+
+/* 活用事例 */
+/* 活用事例アコーディオン */
+.works-ac {
+  width: 92%;
+  margin: 0% 4%;
+}
+.works-ac label{
+  display: block;
+  cursor :pointer;
+  position: relative;
+  margin: 5px 0px;
+  padding: 10px 10px;
+  background: linear-gradient(to bottom, rgba(120, 200, 255, 0.2), rgba(120, 200, 255, 0.2), rgba(120, 200, 255, 0));
+  border-radius: 5px;
+  color: #269;
+  /*font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "ＭＳ Ｐ明朝", "MS PMincho" , sans-serif;*/
+  font-size: 24px;
+  text-align: left;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.works-ac label span{
+  margin: 0;
+  padding: 0px 20px;
+  color: #000;
+  font-size: 14px;
+}
+.works-ac label:hover{
+  background: linear-gradient(to bottom, rgba(120, 200, 255, 0.4), rgba(120, 200, 255, 0.2), rgba(120, 200, 255, 0.1));
+  color: #175caa;
+  transition: 0.3s;
+}
+.works-ac input {
+  display: none;
+}
+.works-ac .hidden-ac{
+  overflow: hidden;
+  height: 0;
+  margin: 0px 10px 15px 10px;
+  padding: 0;
+  transition: 0.3s;
+  opacity: 0;
+}
+.works-ac input:checked ~ .hidden-ac{
+  height: auto;
+  padding: 5px 0px;
+  opacity: 1;
+}
+.works-ac .sub-title{
+  margin: 0;
+  border-bottom:1px dashed #269;
+  color: #000;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: left;
+}
+.works-ac .sub-title span{
+  color: #d00;
+  font-size: 18px;
+}
+/* 活用事例アコーディオン */
+/* 活用事例ブロック */
+.user-img-block{
+  position: relative;
+  display: table-cell;
+  width: 37%;
+  margin: 0;
+  padding: 15px 10px;
+  font-size: 12px;
+  line-height: 2.0;
+}
+.user-txt-block{
+  position: relative;
+  display: table-cell;
+  width: 63%;
+  margin: 0;
+  padding: 15px 10px;
+  font-size: 14px;
+  line-height: 1.8;
+  vertical-align: top;
+}
+.user-txt-block img{
+  width: 50%;
+}
+.user-full-block{
+  position: relative;
+  display: block;
+  width: auto;
+  margin: 0;
+  padding: 15px 10px;
+  font-size: 14px;
+  line-height: 1.8;
+  vertical-align: top;
+}
+/* 活用事例ブロック */
+/* 導入前後課題 */
+.red-title {
+  box-sizing: border-box;
+  width: 98%;
+  margin: 20px auto 0px auto;
+  padding: 0px 5px;
+  color: #f00;
+  font-size: 18px;
+  font-weight: normal;
+}
+.red-block {
+  display: block;
+  box-sizing: border-box;
+  list-style-type: square;
+  width: 98%;
+  margin: 0px auto 30px auto;
+  padding: 10px 50px;
+  border-top: 2px solid #f00;
+  border-bottom: 2px solid #f00;
+  font-size: 16px;
+}
+.orange-title {
+  box-sizing: border-box;
+  width: 98%;
+  margin: 20px auto 0px auto;
+  padding: 0px 5px;
+  color: #f90;
+  font-size: 18px;
+  font-weight: normal;
+}
+.orange-block {
+  display: block;
+  box-sizing: border-box;
+  list-style-type: square;
+  width: 98%;
+  margin: 0px auto 30px auto;
+  padding: 10px 50px;
+  border-top: 2px solid #f90;
+  border-bottom: 2px solid #f90;
+  font-size: 16px;
+}
+/* 導入前後課題 */
+#jaxa-logo{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 320px;
+  min-width: 240px;
+  width: 30%;
+  background: #0047ba; /* JAXAカラー(PANTONE 293 C100%+M70%) */
+}
+.works-block{
+  width: 90%;
+  height: auto;
+  margin: 0% 5%;
+}
+
+.works-photo {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  width: 30.5%;
+  height: 150px;
+  margin: 5px 1%;
+  background: #666;
+}
+.works-photo p{
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  padding: 5px 0px 4px 5px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  color: #fff;
+  font-size: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.works-photo img{
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  transition: 0.3s;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.works-photo img:hover{
+  width: 110%;
+  transition: 0.3s;
+}
+/* 活用事例 */
+
+/* サイトポリシー・プライバシーポリシー */
+.policy .subject{
+  margin: 3% 0%;
+}
+.policy .sub-title{
+  margin: 20px;
+  font-size: 18px;
+  font-weight: normal;
+}
+.policy p{
+  margin: 20px;
+}
+.policy ul{
+  margin: 20px;
+}
+/* サイトポリシー・プライバシーポリシー */
+
+/* フッター */
+.breadcrumb{
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 2% 0px 2%;
+  color: #fff;
+  font-size: 11px;
+  font-weight: normal;
+  text-align: left;
+  text-decoration: none;
+}
+.breadcrumb a{
+  color: #fff;
+  font-weight: normal;
+  text-decoration: none;
+}
+.breadcrumb a:focus{
+  color: #2ad;
+  transition: 0.3s;
+}
+.breadcrumb a:hover{
+  color: #2ad;
+  transition: 0.3s;
+}
+.breadcrumb a:active{
+  color: #269;
+  transition: 0.3s;
+}
+.footer-menu {
+  box-sizing: border-box;
+  list-style-type: none;
+  width: 98%;
+  margin: 0% 1%;
+  padding: 20px 0px;
+  text-align: center;
+}
+.footer-menu li {
+  display: inline-block;
+  padding: 6px;
+  text-align: left;
+  vertical-align: top;
+}
+.footer-menu li a{
+  color: #fff;
+  font-size: 11px;
+  font-weight: normal;
+  text-decoration: none;
+}
+.footer-menu li a:focus{
+  color: #2ad;
+  transition: 0.3s;
+}
+.footer-menu li a:hover{
+  color: #2ad;
+  transition: 0.3s;
+}
+.footer-menu li a:active{
+  color: #269;
+  transition: 0.3s;
+}
+.footer-menu li ul {
+  box-sizing: border-box;
+  list-style-type: none;
+  padding: 0px 2px;
+  text-align: left;
+}
+.footer-menu li ul li {
+  display: inline-block;
+  padding: 0px 5px;
+}
+.footer-menu li .vertical li {
+  display: block;
+  padding: 0px 5px;
+}
+.footer-menu li ul li a{
+  font-size: 11px;
+  font-weight: normal;
+  text-decoration: none;
+}
+.footer-menu li ul li ul li{
+  display: block;
+  padding: 0px 5px;
+}
+.footer-menu li ul li ul li a{
+  font-size: 10px;
+  font-weight: normal;
+  text-decoration: none;
+}
+.footer-info{
+  display: block;
+  clear: both;
+  width: 100%;
+  height: auto;
+}
+.footer-address p {
+  padding: 10px 10px 0px 10px;
+  color: #ccc;
+  font-size: 20px;
+  line-height: 14px;
+  text-align: left;
+}
+.footer-address p span {
+  font-size: 12px;
+}
+.footer-rule {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.footer-rule li {
+  display: inline-block;
+  border-left: 1px solid #666;
+}
+.footer-rule li:last-child {
+  border-right: 1px solid #666;
+}
+.footer-rule li a{
+  display: block;
+  padding: 4px 10px 3px 10px;
+  color: #ccc;
+  font-size: 10px;
+  text-decoration: none;
+}
+.footer-rule li a:focus{
+  color: #2ad;
+  transition: 0.3s;
+}
+.footer-rule li a:hover{
+  color: #2ad;
+  transition: 0.3s;
+}
+.footer-rule li a:active{
+  color: #269;
+  transition: 0.3s;
+}
+.copyright{
+  display: block;
+  margin: 0;
+  padding-bottom: 3px;
+  color: #888;
+  font-size: 10px;
+  text-align: center;
+}
+/* フッター */
+
+/* ページトップへ戻るボタン */
+.page-top {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 10;
+}
+.page-top a {
+  display: block;
+  width: auto;
+  padding: 6px 8px 4px 8px;
+  background: rgba(51, 136, 255, 0.5);
+  border-radius: 5px;
+  color: #fff;
+  font-size: 10px;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.page-top a:hover {
+  background: rgba(4, 72, 123, 0.8);
+  color: #2ad;
+  transition: 0.3s;
+}
+.page-top a:active {
+  background: rgba(51, 136, 255, 0.5);
+  color: #269;
+  transition: 0.3s;
+}
+/* ページトップへ戻るボタン */
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  cursor: default;
+  margin: 41px auto 0px auto; /* ヘッダー固定用 */
+  padding: 0;
+  background: #eee;
+  color: #000;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", HelveticaNeue, "Segoe UI", "游ゴシック体", YuGothic, "Yu Gothic M", "游ゴシック Medium", "Yu Gothic Medium", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN W3", HiraKakuProN-W3, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+.double-header{
+  margin: 148px auto 0px auto; /* ヘッダー固定用 */
+}
+
+header{
+  display: block;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  margin: 0 auto;
+  background: #333;
+  transition: 0.5s;
+}
+.double-menu{
+  height: 148px;
+  background: linear-gradient(to bottom, #333 29%, #444 29%);
+}
+
+nav{
+  display: block;
+}
+
+main{
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+footer{
+  display: block;
+  clear: both;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  background: #222;
+}
+
+article{
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  margin: 10px auto;
+  padding: 0;
+  background: #fff;
+}
+
+h1{
+  box-sizing: border-box;
+  width: 55%;
+  margin: 0 auto;
+  padding: 0;
+  color: #fff;
+  font-size: 70px;
+  line-height: 1.5;
+  font-weight: normal;
+  text-align: center;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+h2{
+  box-sizing: border-box;
+  margin: 20px 0px;
+  color: #269;
+  font-size: 60px;
+  font-weight: normal;
+  text-align: center;
+}
+h3{
+  box-sizing: border-box;
+  margin: 20px 0px;
+  color: #666;
+  font-size: 52px;
+  font-weight: normal;
+  text-align: center;
+}
+h4{
+  box-sizing: border-box;
+  margin: 10px 0px;
+  border-bottom: 1px dashed #aaa;
+  color: #269;
+  font-size: 26px;
+  font-weight: normal;
+  text-align: left;
+}
+h5{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-size: 18px;
+  line-height: 2.2;
+  font-weight: normal;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+h6{
+  box-sizing: border-box;
+  margin: 20px 10px;
+  color: #c33;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+p{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a{
+  color: #000;
+  transition: 0.3s;
+}
+
+a:focus{
+  color: #2ad;
+  transition: 0.3s;
+}
+
+a:hover{
+  color: #2ad;
+  transition: 0.3s;
+}
+
+a:active{
+  color: #269;
+  transition: 0.3s;
+}
+
+img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+summary{
+  background-color: #eee;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+summary:focus {
+  color: #2ad;
+  transition: 0.3s;
+}
+
+summary:hover{
+  color:#2ad;
+  transition: 0.3s;
+}
+
+summary:active{
+  color:#269;
+  transition: 0.3s;
+}
+
+/* ―――――――――――――――――――――――――　ラップトップレイアウト1680px以下適用　※変更点のみ追加（共通＋ラップトップで実装） ――――――――――――――――――――――――― */
+@media screen and (max-width: 1680px) {
+/* メインナビメニュー */
+.dropmenu{
+  width: 80%;
+}
+/* メインナビメニュー */
+
+/* 各ページのタイトル部分 */
+/* ホーム、問合せ、活用事例、当サイトご利用ページに使用 */
+.top-banner .sub-title{
+  font-size: 20px;
+}
+/* ホーム、問合せ、活用事例、当サイトご利用ページに使用 */
+/* サービスページに使用 */
+.service-banner .sub-title{
+  font-size: 28px;
+  line-height: 1.2;
+}
+/* サービスページに使用 */
+/* 各ページのタイトル部分 */
+
+/* トップページコンテンツ */
+.top-content{
+  margin: 0;
+}
+/* トップページコンテンツ */
+
+/* トップページ各種ページリンク */
+.link-service .title{
+  font-size: 2.8vw;
+}
+.link-service .sub-title{
+  font-size: 1.6vw;
+}
+.link-service span{
+  font-size: 1.2vw;
+}
+.link-lineup .title{
+  font-size: 2.8vw;
+}
+.link-lineup .sub-title{
+  font-size: 1.4vw;
+}
+.link-lineup span{
+  font-size: 1.2vw;
+}
+/* トップページ各種ページリンク */
+
+article{
+  max-width: 100%;
+}
+h1{
+  font-size: 60px;
+}
+h2{
+  font-size: 50px;
+}
+h3{
+  font-size: 40px;
+}
+}
+
+/* ―――――――――――――――――――――――――　タブレットレイアウト1280px以下適用　※変更点のみ追加（共通＋ラップトップ＋タブレットで実装） ――――――――――――――――――――――――― */
+@media screen and (max-width: 1280px) {
+/* Nowloading画面 */
+#loader .load-logo{
+  width: 20%;
+  margin: 20% 40% 5% 40%;
+}
+#loader .load-circle{
+  width: 10%;
+}
+/* Nowloading画面 */
+
+/* 各ページ全体幅（左右余白あり） */
+.content{
+  margin: 0% 4%;
+}
+/* 各ページ全体幅（左右余白あり） */
+
+/* ヘッダー会社ロゴ */
+#menu-logo{
+  top: 3px;
+  left: 1%;
+  width: 60px;
+}
+/* ヘッダー会社ロゴ */
+
+/* メインナビメニュー */
+.dropmenu li a{
+  padding: 12px 0px 11px 0px;
+  font-size: 11px;
+}
+/* メインナビメニュー */
+/* ホバー時の流れるライン */
+.dropmenu li a:before,
+.dropmenu li a:after{
+  top: 28px;
+  height: 1px; 
+}
+/* ホバー時の流れるライン */
+
+/* 各ページのタイトル部分 */
+/* ホーム、問合せ、活用事例、当サイトご利用ページに使用 */
+.top-banner .sub-title{
+  font-size: 1.8vw;
+}
+/* ホーム、問合せ、活用事例、当サイトご利用ページに使用 */
+/* サービスページに使用 */
+.service-banner .sub-title{
+  font-size: 2.4vw;
+}
+/* サービスページに使用 */
+/* エラーページに使用 */
+.error-banner .details{
+  font-size: 1.6vw;
+  line-height: 4.0vw;
+}
+/* エラーページに使用 */
+/* 各ページのタイトル部分 */
+
+/* ボタンデザイン */
+.btn {
+  font-size: 14px;
+}
+/* ボタンデザイン */
+
+/* トップページ各種ページリンク */
+.link-service .title{
+  top: 10%;
+  font-size: 3.2vw;
+}
+.link-service .sub-title{
+  top: 21%;
+  font-size: 1.8vw;
+}
+.link-service span{
+  top: 31%;
+  font-size: 1.4vw;
+}
+.link-lineup .title{
+  top: 7%;
+  font-size: 2.8vw;
+}
+.link-lineup .sub-title{
+  top: 20%;
+  font-size: 1.4vw;
+}
+.link-lineup span{
+  top: 28%;
+  font-size: 1.4vw;
+}
+/* トップページ各種ページリンク */
+
+/* トピックス */
+.topix-content h4{
+  font-size: 20px;
+}
+.topix-content h4 span{
+  font-size: 11px;
+}
+/* トピックス */
+
+/* 方式一覧 */
+.molding-block {
+  height: 547px;
+}
+.molding-block img{
+  width: 1280px;
+  height: 547px;
+  margin-left: -640px;
+}
+.molding-details h3{
+  font-size: 46px;
+  line-height: 1.4;
+}
+.molding-details h4{
+  font-size: 20px;
+  line-height: 1.2;
+}
+.molding-details a{
+  font-size: 14px;
+  line-height: 2.4;
+}
+/* 方式一覧 */
+
+/* 各種製品ラインナップページ */
+/* 製品特長 */
+.lineup-block{
+  width: 98%;
+}
+.lineup-block p{
+  margin: 10px 12px 20px 12px;
+  font-size: 14px;
+}
+.lineup-block p span{
+  font-size: 11px;
+}
+/* 製品特長 */
+/* 製品仕様テーブル */
+.lineup-block table{
+  font-size: 12px;
+}
+.lineup-block th span, .lineup-block td span{
+  font-size: 10px;
+}
+/* 製品仕様テーブル */
+/* 参考文章 */
+/* テキスト＆画像（上下分割） */
+.v-split{
+  padding: 0px 5px;
+}
+.v-split p{
+  line-height: 2.0;
+}
+/* テキスト＆画像（上下分割） */
+/* リスト＆画像（上下分割） */
+.v-split ul li{
+  font-size: 14px;
+  line-height: 1.8;
+}
+/* リスト＆画像（上下分割） */
+/* テキスト＆画像（左右分割） */
+.h-split{
+  padding: 0px 5px;
+}
+.h-split p{
+  line-height: 2.0;
+}
+.h-split img{
+  width: 36%;
+}
+/* テキスト＆画像（左右分割） */
+/* リスト＆画像（左右分割） */
+.h-split ul{
+  width: 58%;
+}
+.h-split ul li{
+  font-size: 14px;
+  line-height: 1.8;
+}
+/* リスト＆画像（左右分割） */
+/* 参考文章 */
+/* 各種製品ラインナップページ */
+
+/* 造形・モデリングサービスについて */
+.service-about h5{
+  width: 88%;
+  font-size: 16px;
+}
+.printing-content{
+  height: auto;
+}
+.text-block-right{
+  width: 62%;
+  height: auto;
+  margin: 5% 0% 0% 0%;
+}
+.text-block-left{
+  width: 62%;
+  height: auto;
+  margin: 5% 0% 0% 0%;
+}
+.image-block-right{
+  width: 38%;
+  height: auto;
+}
+.image-block-left{
+  width: 38%;
+  height: auto;
+}
+.service-block p{
+  margin: 5px 10px;
+  font-size: 14px;
+}
+.service-block p span{
+  font-size: 11px;
+}
+.service-block ul li{
+  margin: 5px 20px 5px 0px;
+  font-size: 12px;
+}
+#modeling-image{
+  width: 90%;
+  margin: 10px 5%;
+}
+/* 造形・モデリングサービスについて */
+
+/* 弊社所有3Dプリンタ・使用機材 */
+.equipment-title{
+  padding: 10px 14px 0px 14px;
+  font-size: 16px;
+}
+.equipment-printer{
+  min-height: 500px;
+  background-size: 40%;
+}
+.equipment-printer p{
+  width: 96%;
+  margin: 10px 2%;
+  font-size: 16px;
+}
+.equipment-printer p span{
+  font-size: 14px;
+}
+.equipment-printer img{
+  right: 42%;
+}
+.equipment-soft{
+  min-height: 380px;
+}
+.equipment-soft h4{
+  font-size: 24px;
+}
+.equipment-soft p{
+  font-size: 14px;
+}
+/* 弊社所有3Dプリンタ・使用機材 */
+
+/* お問い合わせフォームデザイン */
+.contact-form table{
+  width: 100%;
+  margin: 0%;
+}
+.contact-form span{
+  font-size: 11px;
+}
+.contact-form th{
+  font-size: 12px;
+}
+.contact-form td{
+  font-size: 12px;
+}
+.contact-form textarea{
+  font-size: 12px;
+}
+.contact-form input{
+  font-size: 12px;
+}
+.contact-form input[type="file"]{
+  font-size: 12px;
+}
+/* お問い合わせフォームデザイン */
+
+/* 利用規約 */
+.agreement h4{
+  font-size: 16px;
+}
+.agreement div{
+  padding: 10px 0px;
+}
+.agreement .title{
+  padding: 10px 0px;
+  font-size: 12px;
+}
+.agreement .chapter{
+  padding: 10px 12px;
+  font-size: 11px;
+}
+.agreement p{
+  font-size: 11px;
+}
+.agreement ul{
+  font-size: 11px;
+}
+.agreement .red{
+  font-size: 11px;
+}
+/* 利用規約 */
+
+/* 活用事例 */
+/* 活用事例アコーディオン */
+.works-ac {
+  width: 96%;
+  margin: 0% 2%;
+}
+.works-ac label{
+  font-size: 18px;
+}
+.works-ac label span{
+  padding: 0px 10px;
+  font-size: 12px;
+}
+.works-ac .sub-title{
+  font-size: 14px; 
+}
+.works-ac .sub-title span{
+  font-size: 16px;
+}
+/* 活用事例アコーディオン */
+/* 活用事例ブロック */
+.user-img-block{
+  padding: 10px 5px;
+  font-size: 10px;
+}
+.user-txt-block{
+  padding: 10px 5px;
+  font-size: 12px;
+}
+.user-full-block{
+  padding: 10px 5px;
+  font-size: 12px;
+}
+/* 活用事例ブロック */
+/* 導入前後課題 */
+.red-title {
+  font-size: 16px;
+}
+.red-block {
+  font-size: 14px;
+}
+.orange-title {
+  font-size: 16px;
+}
+.orange-block {
+  font-size: 14px;
+}
+/* 導入前後課題 */
+.works-photo {
+  width: 47.4%;
+  height: 120px;
+}
+/* 活用事例 */
+
+/* サイトポリシー・プライバシーポリシー */
+.policy .sub-title{
+  font-size: 16px;
+}
+/* サイトポリシー・プライバシーポリシー */
+
+/* フッター */
+.breadcrumb{
+  font-size: 11px;
+}
+.footer-menu {
+  width: 90%;
+  margin: 0% 5%;
+}
+.footer-menu li {
+  display: block;
+}
+.footer-menu li ul li {
+  padding: 0px 10px;
+}
+.footer-menu li .vertical li {
+  display: inline-block;
+  padding: 0px 15px;
+}
+.footer-menu li ul li a{
+  font-size: 10px;
+}
+.footer-menu li ul li ul li{
+  padding: 0px 5px;
+}
+.footer-menu li ul li ul li a{
+  font-size: 10px;
+}
+.footer-address p {
+  font-size: 18px;
+  line-height: 12px;
+}
+.footer-address p span {
+  font-size: 11px;
+}
+.footer-rule li{
+  margin: 3px 0px;
+}
+/* フッター */
+
+body{
+  margin: 33px auto 0px auto; /* ヘッダー固定用 */
+}
+.double-header{
+  margin: 140px auto 0px auto; /* ヘッダー固定用 */
+}
+
+.double-menu{
+  height: 140px;
+  background: linear-gradient(to bottom, #333 24%, #444 24%);
+}
+
+h1{
+  width: 80%;
+  font-size: 5.0vw;
+  line-height: 1.2;
+}
+h2{
+  font-size: 4.2vw;
+}
+h3{
+  font-size: 3.2vw;
+}
+h4{
+  font-size: 18px;
+}
+h5{
+  font-size: 16px;
+}
+h6{
+  font-size: 16px;
+}
+}
+
+/* ―――――――――――――――――――――――――　スマホレイアウト750px以下適用　※変更点のみ追加（共通＋ラップトップ＋タブレット＋スマホで実装） ――――――――――――――――――――――――― */
+@media screen and (max-width: 750px) {
+/* Nowloading画面 */
+#loader .load-logo{
+  width: 30%;
+  margin: 20% 35% 8% 35%;
+}
+#loader .load-circle{
+  width: 15%;
+}
+/* Nowloading画面 */
+
+/* 各ページ全体幅（左右余白あり） */
+.content{
+  margin: 0% 2%;
+  padding: 20px 0px;
+}
+/* 各ページ全体幅（左右余白あり） */
+
+/* ヘッダー会社ロゴ */
+#menu-logo{
+  top: 7px;
+  left: 2%;
+  width: 90px;
+}
+/* ヘッダー会社ロゴ */
+
+/* メインナビメニュー */
+.dropmenu{
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+  margin: 57px 0px 0px 0px;
+  padding: 0;
+  -webkit-scrollbar: none;
+  -ms-overflow-style: none;
+}
+.dropmenu li{
+  width: 100%;
+  height: auto;
+  background: #333;
+}
+.dropmenu li:first-child{
+  border-top: 1px solid #666;
+}
+.dropmenu li:last-child{
+  border-bottom: 1px solid #999;
+}
+.dropmenu li a{
+  padding: 14px 0px 12px 0px;
+  background: transparent;
+  font-size: 14px;
+}
+/* ホバー時の流れるライン */
+.dropmenu li a:before,
+.dropmenu li a:after{
+  top: 30px;
+  height: 1px; 
+}
+/* ホバー時の流れるライン */
+/* 現在開いているページ */
+.dropmenu .active{
+  cursor: default;
+}
+/* 現在開いているページ */
+/* メインナビメニュー */
+
+/* サブナビメニュー */
+.sub-dropmenu{
+  display: none;
+}
+/* サブナビメニュー */
+
+/* スマホ向け折りたたみメニューボタン */
+.spmenu-btn { 
+  display:block;
+  box-sizing:border-box;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1; /* header z-index 99-1 */
+  width: 39px; 
+  height: 28px; 
+  margin: 0; 
+  padding: 0;
+  border-radius:2px;
+  transition:all 0.3s;
+}
+.spmenu-btn .bar { 
+  display: inline-block; 
+  position: absolute; 
+  left: 0; 
+  width: 40px; 
+  height: 5px; 
+  background: #17c; 
+  border-radius: 2px;
+  transition: 0.15s; 
+} 
+#bar01 { 
+  top: 15px; 
+  -webkit-transform: rotate(-45deg); 
+  transform: rotate(-45deg); 
+} 
+#bar02 { 
+  width: 0; 
+} 
+#bar03 { 
+  top: 15px; 
+  -webkit-transform: rotate(45deg); 
+  transform: rotate(45deg); 
+} 
+.active #bar01 { 
+  top: 0; 
+  -webkit-transform: rotate(0deg); 
+  transform: rotate(0deg); 
+} 
+.active #bar02 { 
+  top: 15px; 
+  width: 40px; 
+} 
+.active #bar03 { 
+  top: 30px; 
+  -webkit-transform: rotate(0deg); 
+  transform: rotate(0deg); 
+} 
+/* スマホ向け折りたたみメニューボタン */
+
+/* 各ページのタイトル部分 */
+.main-banner img{
+  width: 150%;
+  height: auto;
+  margin-left: -25%;
+}
+/* ホーム、問合せ、活用事例、当サイトご利用ページに使用 */
+.top-banner .sub-title{
+  font-size: 2.5vw;
+  line-height: 3.8vw;
+}
+/* ホーム、問合せ、活用事例、当サイトご利用ページに使用 */
+/* サービスページに使用 */
+.service-banner .sub-title{
+  font-size: 3.2vw;
+}
+/* サービスページに使用 */
+/* エラーページに使用 */
+.error-banner .details{
+  font-size: 2.8vw;
+  line-height: 5.6vw;
+}
+/* エラーページに使用 */
+/* 各ページのタイトル部分 */
+
+/* ボタンデザイン */
+.btn {
+  font-size: 12px;
+}
+/* ボタンデザイン */
+
+/* トップページ各種ページリンク */
+.link-service{
+  display: block;
+  width: 100%;
+}
+.link-service .title{
+  font-size: 6.2vw;
+}
+.link-service .sub-title{
+  font-size: 3.6vw;
+}
+.link-service span{
+  font-size: 3.4vw;
+}
+.link-lineup{
+  display: block;
+  width: 100%;
+}
+.link-lineup .title{
+  font-size: 6.2vw;
+}
+.link-lineup .sub-title{
+  top: 17%;
+  font-size: 3.8vw;
+}
+.link-lineup span{
+  top: 27%;
+  font-size: 3.4vw;
+}
+/* トップページ各種ページリンク */
+
+/* トピックス */
+.topix-block{
+  height: 220px;
+}
+.topix-content h4{
+  font-size: 16px;
+}
+.topix-content h4 span{
+  font-size: 10px;
+}
+.topix-content p{
+  font-size: 12px;
+}
+/* トピックス */
+
+/* 方式一覧 */
+.molding-block{
+  width: 120%;
+  height: auto;
+  margin-left: -10%;
+}
+.molding-block img{
+  position: relative;
+  width: 150%;
+  height: auto;
+  margin-left: -75%;
+}
+.molding-details h3{
+  font-size: 4.6vw;
+  line-height: 1.4;
+}
+.molding-details h4{
+  font-size: 3.0vw;
+  line-height: 1.0;
+}
+.molding-details a{
+  font-size: 2.8vw;
+  line-height: 2.4;
+}
+/* 方式一覧 */
+
+/* 各種製品ラインナップページ */
+/* 製品仕様テーブル */
+.lineup-block table{
+  font-size: 10px;
+}
+.lineup-block th span, .lineup-block td span{
+  color: #966;
+}
+/* 製品仕様テーブル */
+/* 参考文章 */
+/* テキスト＆画像（上下分割） */
+.v-split{
+  margin: 0px 0px 20px 0px;
+}
+.v-split p{
+  width: auto;
+  margin: 0px 5px;
+  line-height: 1.8;
+}
+.v-split img{
+  display: block;
+  width: 90%;
+  margin: 5px auto;
+}
+/* テキスト＆画像（上下分割） */
+/* リスト＆画像（上下分割） */
+.v-split ul li{
+  line-height: 1.6;
+}
+/* リスト＆画像（上下分割） */
+/* テキスト＆画像（左右分割） */
+.h-split{
+  margin: 0px 0px 20px 0px;
+}
+.h-split p{
+  display: block;
+  width: auto;
+  margin: 0px 5px;
+  line-height: 1.8;
+}
+.h-split img{
+  display: block;
+  width: 98%;
+  margin: 5px auto;
+}
+/* テキスト＆画像（左右分割） */
+/* リスト＆画像（左右分割） */
+.h-split ul{
+  display: block;
+  width: auto;
+}
+.h-split ul li{
+  line-height: 1.6;
+}
+/* リスト＆画像（左右分割） */
+/* 参考文章 */
+/* お見積りボタン */
+.estimate-block{
+  width: 50%;
+  margin: 50px 25% 30px 25%;
+}
+/* お見積りボタン */
+/* 各種製品ラインナップページ */
+
+/* 造形・モデリングサービスについて */
+.service-about{
+  padding: 50px 0px;
+}
+.printing-content{
+  display: block;
+  height: auto;
+}
+.text-block-right{
+  display: block;
+  width: 98%;
+  margin: 20px 0px 0px 0px;
+}
+.text-block-left{
+  display: block;
+  width: 98%;
+  margin: 20px 0px 0px 0px;
+}
+.image-block-right{
+  display: block;
+  float: none;
+  width: 88%;
+  margin: 0 auto;
+}
+.image-block-left{
+  display: block;
+  float: none;
+  width: 88%;
+  margin: 0 auto;
+}
+#modeling-image{
+  box-shadow: 3px 3px 3px #ccc;
+}
+/* 造形・モデリングサービスについて */
+
+/* 弊社所有3Dプリンタ・使用機材 */
+.equipment-title{
+  padding: 8px 10px 0px 10px;
+  font-size: 14px;
+}
+.equipment-printer{
+  min-height: 250px;
+  background-size: 50%;
+}
+.equipment-printer img{
+  left: 0;
+  max-width: 280px;
+  width: 50%;
+}
+.printer1{
+  padding-bottom: 200px;
+}
+.printer2{
+  padding-bottom: 200px;
+}
+.printer3{
+  padding-bottom: 200px;
+}
+.equipment-table{
+  display: block;
+}
+.equipment-soft{
+  display: block;
+  width: 100%;
+  min-height: 320px;
+}
+.equipment-soft h4{
+  font-size: 16px;
+}
+#soft-image{
+  box-shadow: 3px 3px 3px #ccc;
+}
+/* 弊社所有3Dプリンタ・使用機材 */
+
+/* お問い合わせフォームデザイン */
+.contact-form table{
+  display: block;
+  width: auto;
+  padding-top: 20px;
+  border-top: 1px solid #555;
+}
+.contact-form tbody{
+  display: block;
+}
+.contact-form th{
+  display: block;
+  width: auto;
+  padding: 10px;
+  background: linear-gradient(to right, #ddd, transparent);
+  border-top: 0px;
+  border-top-left-radius: 10px;
+  overflow-wrap: break-word;
+}
+.contact-form td{
+  display: block;
+  width: auto;
+  border-top: 0px;
+}
+.contact-form textarea{
+  width: 96%;
+  border-radius: 3px;
+}
+.contact-form label{
+  width: 100%;
+  padding: 0;
+}
+.contact-form input[type="text"]{
+  border-radius: 3px;
+}
+.contact-form input.submit_btn { 
+  width: 70%;
+  margin: 20px 15% 40px 15%;
+  padding: 10px;
+  font-size: 14px;
+} 
+/* お問い合わせフォームデザイン */
+
+/* 利用規約 */
+.agreement{
+  width: 98%;
+  margin: 30px 1%;
+  padding: 10px 5%;
+}
+.agreement h4{
+  font-size: 14px;
+}
+.agreement div{
+  height: 180px;
+}
+.agreement .title{
+  font-size: 12px;
+}
+.agreement .chapter{
+  font-size: 10px;
+}
+.agreement p{
+  font-size: 10px;
+}
+.agreement ul{
+  font-size: 10px;
+}
+.agreement .red{
+  font-size: 10px;
+}
+/* 利用規約 */
+
+/* 活用事例 */
+/* 活用事例アコーディオン */
+.works-ac label{
+  font-size: 16px;
+  margin: 10px 0px;
+}
+.works-ac label span{
+  display: block;
+  clear: both;
+  font-size: 10px;
+}
+/* 活用事例アコーディオン */
+/* 活用事例ブロック */
+.user-img-block{
+  display: block;
+  width: 96%;
+  margin: 0% 2%;
+  padding: 5px 0px;
+}
+.user-txt-block{
+  display: block;
+  width: 96%;
+  margin: 0% 2%;
+  padding: 10px 0px;
+}
+.user-txt-block img{
+  width: 100%;
+}
+.user-full-block{
+  display: block;
+  width: 96%;
+  margin: 0% 2%;
+  padding: 10px 0px;
+}
+/* 活用事例ブロック */
+/* 導入前後課題 */
+.red-block {
+  padding: 10px 30px;
+}
+.orange-block {
+  padding: 10px 30px;
+}
+/* 導入前後課題 */
+#jaxa-logo{
+  position: relative;
+  float: right;
+}
+/* 活用事例ブロック */
+.works-photo {
+  height: 80px;
+}
+.works-photo p{
+  padding: 3px 0px 2px 3px;
+  font-size: 10px;
+}
+/* 活用事例 */
+
+/* サイトポリシー・プライバシーポリシー */
+.policy .subject{
+  margin: 3% 0%;
+}
+.policy .sub-title{
+  font-size: 14px;
+}
+/* サイトポリシー・プライバシーポリシー */
+
+/* フッター */
+.footer-menu li ul li {
+  display: block;
+}
+.footer-menu li .vertical li {
+  display: block;
+  padding: 0px 10px;
+}
+.footer-menu li ul li ul li {
+  padding: 2px 10px;
+}
+.footer-address p {
+  font-size: 16px;
+}
+.footer-address p span {
+  font-size: 10px;
+}
+/* フッター */
+
+body{
+  min-width: 320px;
+  margin: 57px auto 0px auto; /* ヘッダー固定用 */
+  font-family: "Noto Sans Japanese", YuGothic, 'Yu Gothic', 游ゴシック体, '游ゴシック', "Avenir Next", 'Helvetica Neue', Helvetica, Arial, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'MS ゴシック', 'MS Gothic', sans-serif !important;
+  font-size: 12px;
+}
+.double-header{
+  margin: 57px auto 0px auto; /* ヘッダー固定用 */
+}
+header{
+  height: 57px;
+  border-bottom: 0;
+}
+.double-menu{
+  height: 57px;
+  background: #333;
+}
+article{
+  overflow: hidden;
+}
+h1{
+  font-size: 6.2vw;
+}
+h2{
+  font-size: 5.0vw;
+}
+h3{
+  font-size: 4.0vw;
+}
+h4{
+  font-size: 16px;
+}
+h5{
+  font-size: 14px;
+}
+h6{
+  font-size: 14px;
+}
+summary {
+  font-size: 12px;
+}
+
+}
